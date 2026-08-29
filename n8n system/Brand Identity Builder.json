@@ -1,0 +1,1867 @@
+{
+  "name": "Brand Identity Builder",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Brand Identity Builder — Step 1 of 2+",
+        "formDescription": "Tell us the basics. We will only ask for extra details based on what you select next.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Brand Name",
+              "fieldName": "brand_name",
+              "placeholder": "e.g. Lumière",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Brand Concept",
+              "fieldType": "textarea",
+              "fieldName": "brand_concept",
+              "placeholder": "What does your brand do? Who does it serve? What values and feeling should it convey? The more detail the better.",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What is your logo situation?",
+              "fieldType": "dropdown",
+              "fieldName": "logo_status",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Starting from scratch — need a new logo concept"
+                  },
+                  {
+                    "option": "Have a logo — needs improvements or a refresh"
+                  },
+                  {
+                    "option": "Have a logo — happy with it, no changes needed"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Existing Assets & Notes (optional)",
+              "fieldType": "textarea",
+              "fieldName": "existing_assets",
+              "placeholder": "Describe any existing logo, colors, or fonts. What do you like or dislike?"
+            },
+            {
+              "fieldLabel": "Your Email Address",
+              "fieldType": "email",
+              "fieldName": "email",
+              "placeholder": "you@example.com",
+              "requiredField": true
+            }
+          ]
+        },
+        "responseMode": "lastNode",
+        "options": {
+          "buttonLabel": "Next →",
+          "path": "brand-identity"
+        }
+      },
+      "id": "5ad5f63e-8ce8-4306-a64b-ec81f8d39ad8",
+      "name": "Brand Identity Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "a0cae193-22f3-4617-bb1f-aaf38e716581"
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "html",
+              "html": "<p style=\"margin:0 0 12px;color:#555;font-size:.9rem\">Select everything you need. The next pages will only appear for what you choose here.</p>"
+            },
+            {
+              "fieldLabel": "What do you need?",
+              "fieldType": "checkbox",
+              "fieldName": "deliverables",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Brand Identity Document"
+                  },
+                  {
+                    "option": "Campaign Images"
+                  },
+                  {
+                    "option": "Mood Board"
+                  },
+                  {
+                    "option": "Social Media Carousels"
+                  },
+                  {
+                    "option": "Brand Videos"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "formTitle": "Brand Identity Builder — What Do You Need?",
+          "buttonLabel": "Next →"
+        }
+      },
+      "id": "24bea04a-79f6-4efc-87be-236d4b00293e",
+      "name": "Deliverables Page",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.5,
+      "position": [
+        -3808,
+        144
+      ],
+      "webhookId": "6c9f51a9-19bf-4156-b36b-30a47727875e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.deliverables }}",
+              "rightValue": "Campaign Images",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "c2",
+              "leftValue": "={{ $json.deliverables }}",
+              "rightValue": "Mood Board",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "c3",
+              "leftValue": "={{ $json.deliverables }}",
+              "rightValue": "Social Media Carousels",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "80d49902-d710-4634-88b5-5d5d2de7522c",
+      "name": "Needs Image Direction?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3584,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "html",
+              "html": "<p style=\"margin:0 0 12px;color:#555;font-size:.9rem\">You selected Campaign Images, Mood Board, or Carousels. Describe the visual style you want for your images.</p>"
+            },
+            {
+              "fieldLabel": "Visual Style & Mood",
+              "fieldType": "textarea",
+              "fieldName": "image_direction",
+              "placeholder": "e.g. Minimalist, golden hour lighting, muted earthy palette, luxury editorial feel, no people, product-focused…"
+            },
+            {
+              "fieldLabel": "Upload Reference Images (optional — multiple files allowed)",
+              "fieldType": "file",
+              "fieldName": "image_references"
+            }
+          ]
+        },
+        "options": {
+          "formTitle": "Image Visual Direction",
+          "buttonLabel": "Next →"
+        }
+      },
+      "id": "627d0272-7a6f-4019-a3f8-da534c8b171a",
+      "name": "Image Direction Page",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.5,
+      "position": [
+        -3360,
+        80
+      ],
+      "webhookId": "c3916200-5474-4143-9a6c-da191b5175f3"
+    },
+    {
+      "parameters": {},
+      "id": "e3f30cca-54d5-4dff-a8a8-655cceb372e2",
+      "name": "Merge After Images",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -3136,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "html",
+              "html": "<p style=\"margin:0 0 12px;color:#555;font-size:.9rem\">You selected Brand Videos. We will generate 3 short brand videos: a Brand Story, a Product Showcase, and a Lifestyle Reel. Describe the mood and style for all three.</p>"
+            },
+            {
+              "fieldLabel": "Video Mood & Style",
+              "fieldType": "textarea",
+              "fieldName": "video_direction",
+              "placeholder": "e.g. Cinematic slow motion, warm golden tones, nature-inspired, no people, aspirational lifestyle, product hero shots…"
+            },
+            {
+              "fieldLabel": "Upload a Reference Photo for Video Style (optional)",
+              "fieldType": "file",
+              "fieldName": "video_references",
+              "multipleFiles": false
+            }
+          ]
+        },
+        "options": {
+          "formTitle": "Video Direction",
+          "buttonLabel": "Submit My Brief →"
+        }
+      },
+      "id": "718b534c-711d-4710-a6b6-c8bd56101b4a",
+      "name": "Video Direction Page",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.5,
+      "position": [
+        -2688,
+        80
+      ],
+      "webhookId": "9983e454-a837-4fcb-b7ce-50e9ef83dabb"
+    },
+    {
+      "parameters": {},
+      "id": "c9d0f3ba-e96b-4ef7-95f4-031b432f4d8b",
+      "name": "Merge After Videos",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -2464,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "v1",
+              "leftValue": "={{ $(\"Deliverables Page\").first().json.deliverables }}",
+              "rightValue": "Brand Videos",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1fb26e88-897d-47c7-8b8b-745747d4c6e4",
+      "name": "Needs Video Direction?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2912,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone"
+          }
+        },
+        "options": {}
+      },
+      "id": "e9e86715-6289-4a7e-ac1f-70a7e5510a52",
+      "name": "Share Videos Publicly",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1936,
+        672
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "oeojJKUgfFHtn4X0",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "b13e24b3-f8d8-4352-bf61-e27a79acd0a3",
+      "name": "Merge After Video Collect",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1568,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "has-prompt",
+              "leftValue": "={{ $json.prompt }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4e997622-1ba4-4b3c-a87d-cd3ccf3cbdcd",
+      "name": "Needs Videos?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Brief Received!",
+        "completionMessage": "Thank you! We are reviewing your brief and will send a creative proposal to your inbox shortly. You will need to approve it before we start generating anything.",
+        "options": {}
+      },
+      "id": "e0fc4a47-e125-4c68-8d85-87125c1204d8",
+      "name": "Form Complete",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.5,
+      "position": [
+        -2240,
+        144
+      ],
+      "webhookId": "d5920ecc-486c-4ab7-bc23-64b491a8d5a3"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst p1 = $('Brand Identity Form').first().json;\nconst p2 = $('Deliverables Page').first().json;\nlet image_direction = '';\ntry { image_direction = $('Image Direction Page').first().json.image_direction || ''; } catch(e) {}\nlet video_direction = '';\ntry { video_direction = $('Video Direction Page').first().json.video_direction || ''; } catch(e) {}\nreturn [{ json: {\n  brand_name: p1.brand_name || '',\n  brand_concept: p1.brand_concept || '',\n  logo_status: p1.logo_status || '',\n  existing_assets: p1.existing_assets || '',\n  email: p1.email || '',\n  deliverables: p2.deliverables || '',\n  image_direction,\n  video_direction,\n}}];\n"
+      },
+      "id": "4a5facc8-55a0-40ee-80fb-c699632e7c3b",
+      "name": "Collect Form Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2016,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "PX4S499Nhmr10FXj"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "submitted_at": "={{ $now.toISO() }}",
+            "brand_name": "={{ $json.brand_name }}",
+            "customer_email": "={{ $json.email }}",
+            "logo_status": "={{ $json.logo_status }}",
+            "deliverables": "={{ Array.isArray($json.deliverables) ? $json.deliverables.join(\", \") : ($json.deliverables || \"\") }}",
+            "brand_concept": "={{ $json.brand_concept }}",
+            "existing_assets": "={{ $json.existing_assets || \"\" }}",
+            "image_direction": "={{ $json.image_direction || \"\" }}",
+            "video_direction": "={{ $json.video_direction || \"\" }}"
+          },
+          "schema": [
+            {
+              "id": "submitted_at",
+              "displayName": "submitted_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "brand_name",
+              "displayName": "brand_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "customer_email",
+              "displayName": "customer_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "logo_status",
+              "displayName": "logo_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "deliverables",
+              "displayName": "deliverables",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "brand_concept",
+              "displayName": "brand_concept",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "existing_assets",
+              "displayName": "existing_assets",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "image_direction",
+              "displayName": "image_direction",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "video_direction",
+              "displayName": "video_direction",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d54d6ee1-9f1a-4020-b282-3b3c39bc6111",
+      "name": "Save Submission",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -1792,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "PX4S499Nhmr10FXj"
+        },
+        "returnAll": true,
+        "orderBy": true,
+        "orderByDirection": "ASC"
+      },
+      "id": "f7eccb61-2c5e-4df8-b2dc-7d1f455a4162",
+      "name": "Get All Submissions",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -1568,
+        288
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst current = $('Collect Form Data').first().json;\nconst all = $('Get All Submissions').all();\n\nconst delivStr = Array.isArray(current.deliverables)\n  ? current.deliverables.join(', ')\n  : (current.deliverables || '-');\n\nconst rows = all.map(function(item, i) {\n  const d = item.json;\n  const bg = i % 2 === 0 ? '#f9f5ee' : '#ffffff';\n  const dateStr = d.submitted_at ? String(d.submitted_at).substring(0, 10) : '-';\n  const deliv = Array.isArray(d.deliverables) ? d.deliverables.join(', ') : (d.deliverables || '-');\n  return '<tr style=\"background:' + bg + '\">' +\n    '<td style=\"padding:9px 12px;border-bottom:1px solid #ece8df\">' + (i + 1) + '</td>' +\n    '<td style=\"padding:9px 12px;border-bottom:1px solid #ece8df\">' + dateStr + '</td>' +\n    '<td style=\"padding:9px 12px;border-bottom:1px solid #ece8df;font-weight:600\">' + (d.brand_name || '-') + '</td>' +\n    '<td style=\"padding:9px 12px;border-bottom:1px solid #ece8df\">' + (d.customer_email || '-') + '</td>' +\n    '<td style=\"padding:9px 12px;border-bottom:1px solid #ece8df\">' + (d.logo_status || '-') + '</td>' +\n    '<td style=\"padding:9px 12px;border-bottom:1px solid #ece8df\">' + deliv + '</td>' +\n    '</tr>';\n}).join('');\n\nconst html =\n  '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><style>' +\n  'body{font-family:Georgia,serif;color:#1a1a1a;max-width:860px;margin:0 auto;padding:32px 24px;background:#fff}' +\n  'h1{font-size:1.7rem;color:#0d0d0d;border-bottom:3px solid #c9a84c;padding-bottom:10px}' +\n  'h2{font-size:1.05rem;color:#444;margin-top:2rem}' +\n  'table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:.75rem}' +\n  'th{background:#c9a84c;color:#fff;padding:10px 12px;text-align:left;font-weight:600}' +\n  'td{vertical-align:top}' +\n  '.new-box{background:#f9f5ee;border-left:4px solid #c9a84c;padding:14px 18px;margin:1.5rem 0;font-size:.9rem}' +\n  '.new-box p{margin:.2rem 0}' +\n  '.footer{margin-top:2.5rem;font-size:.82rem;color:#888;border-top:1px solid #eee;padding-top:14px}' +\n  '</style></head><body>' +\n  '<h1>Brand Identity Builder — New Submission</h1>' +\n  '<div class=\"new-box\">' +\n  '<p><strong>Brand Name:</strong> ' + (current.brand_name || '-') + '</p>' +\n  '<p><strong>Customer Email:</strong> ' + (current.email || '-') + '</p>' +\n  '<p><strong>Logo Status:</strong> ' + (current.logo_status || '-') + '</p>' +\n  '<p><strong>Deliverables:</strong> ' + delivStr + '</p>' +\n  '<p><strong>Brand Concept:</strong> ' + (current.brand_concept || '-') + '</p>' +\n  (current.existing_assets ? '<p><strong>Existing Assets:</strong> ' + current.existing_assets + '</p>' : '') +\n  (current.image_direction ? '<p><strong>Image Direction:</strong> ' + current.image_direction + '</p>' : '') +\n  (current.video_direction ? '<p><strong>Video Direction:</strong> ' + current.video_direction + '</p>' : '') +\n  '</div>' +\n  '<h2>All Submissions History (' + all.length + ' total)</h2>' +\n  '<table>' +\n  '<thead><tr><th>#</th><th>Date</th><th>Brand Name</th><th>Email</th><th>Logo Status</th><th>Deliverables</th></tr></thead>' +\n  '<tbody>' + rows + '</tbody>' +\n  '</table>' +\n  '<div class=\"footer\">Brand Identity Builder &middot; Powered by n8n</div>' +\n  '</body></html>';\n\nreturn [{ json: { html: html, total: all.length, brand_name: current.brand_name || 'New Client' } }];\n"
+      },
+      "id": "620757ec-1e4e-4b95-afcc-a0b95e974e55",
+      "name": "Build History Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1344,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "ayarihaninhns@gmail.com",
+        "subject": "=New Brief: {{ $json.brand_name }} — {{ $json.total }} total submission(s)",
+        "html": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "914fcaea-b778-4c62-a369-acecca2738a6",
+      "name": "Notify Owner",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        -1792,
+        288
+      ],
+      "webhookId": "70143f8e-728e-4850-a160-2599bbf0e5b4",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o",
+          "cachedResultName": "gpt-4o"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=Brand Name: {{ $(\"Collect Form Data\").first().json[\"brand_name\"] }}\nBrand Concept: {{ $(\"Collect Form Data\").first().json[\"brand_concept\"] }}\nLogo Status: {{ $(\"Collect Form Data\").first().json[\"logo_status\"] }}\nExisting Assets / Notes: {{ $(\"Collect Form Data\").first().json[\"existing_assets\"] || \"None provided\" }}\nDeliverables Requested: {{ $(\"Collect Form Data\").first().json[\"deliverables\"] }}\nImage Visual Direction: {{ $(\"Collect Form Data\").first().json[\"image_direction\"] || \"None provided\" }}\nVideo Direction: {{ $(\"Collect Form Data\").first().json[\"video_direction\"] || \"None provided\" }}\n\nWrite a creative proposal for this brand identity project."
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {
+          "instructions": "You are a senior creative director and brand strategist. Based on a client intake form, write a concise creative proposal outlining your planned approach. Use short, inspiring, professional language. Structure your response as clean HTML using only <h3>, <p>, and <ul>/<li> tags. Cover: (1) Creative Direction, (2) Visual Identity Plan, (3) Messaging Approach, (4) Planned Deliverables & Approach. Keep it concise — this is a proposal summary, not the final work.",
+          "maxTokens": 1024
+        }
+      },
+      "id": "4cc0bda3-a1a1-4fa9-9fd6-fb175e74a067",
+      "name": "Generate Proposal",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        -1792,
+        96
+      ],
+      "retryOnFail": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "sjTtpq5JceWIje2A",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst formData = $('Collect Form Data').first().json;\nconst proposal = $input.first().json;\nconst proposalBody = (proposal.output && proposal.output[0] && proposal.output[0].content && proposal.output[0].content[0] && proposal.output[0].content[0].text) ? proposal.output[0].content[0].text : '';\nconst brandName = formData['brand_name'] || 'Your Brand';\nconst deliverables = Array.isArray(formData['deliverables']) ? formData['deliverables'].join(', ') : (formData['deliverables'] || '');\nconst logoStatus = formData['logo_status'] || '';\nconst existingAssets = formData['existing_assets'] || 'None provided';\nconst imageDirection = formData['image_direction'] || '';\nconst videoDirection = formData['video_direction'] || '';\nconst toEmail = formData['email'];\nlet hasImageRefs = false;\ntry { hasImageRefs = !!($('Image Direction Page').first().binary || {}).image_references; } catch(e) {}\nlet hasVideoRefs = false;\ntry { hasVideoRefs = !!($('Video Direction Page').first().binary || {}).video_references; } catch(e) {}\nconst refsNote = (hasImageRefs || hasVideoRefs)\n  ? '<p style=\"color:#6b7280;font-size:.88rem;margin-top:.5rem\">' +\n    (hasImageRefs ? 'Image reference files uploaded. ' : '') +\n    (hasVideoRefs ? 'Video reference photo uploaded.' : '') + '</p>' : '';\nconst html =\n  '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><style>' +\n  'body{font-family:Georgia,serif;color:#1a1a1a;max-width:680px;margin:0 auto;padding:32px 24px;background:#fff}' +\n  'h1{font-size:1.8rem;color:#0d0d0d;border-bottom:3px solid #c9a84c;padding-bottom:10px}' +\n  'h2{font-size:1.1rem;color:#555;font-weight:normal;margin-top:4px}' +\n  'h3{font-size:1.1rem;color:#2c2c2c;margin-top:1.5rem}' +\n  'p{line-height:1.75;margin:.5rem 0}ul{padding-left:1.4rem}li{margin-bottom:5px;line-height:1.6}' +\n  '.meta{background:#f9f5ee;border-left:4px solid #c9a84c;padding:12px 16px;margin:1.5rem 0;font-size:.9rem}' +\n  '.meta p{margin:.25rem 0}.meta strong{min-width:160px;display:inline-block;color:#555}' +\n  '.note{margin-top:2rem;padding:12px 16px;background:#f5f5f5;border-radius:4px;font-size:.85rem;color:#666}' +\n  '</style></head><body>' +\n  '<h1>Creative Proposal: ' + brandName + '</h1>' +\n  '<h2>Review the proposed approach below and let us know your decision.</h2>' +\n  '<div class=\"meta\">' +\n  '<p><strong>Brand Name:</strong>' + brandName + '</p>' +\n  '<p><strong>Logo Status:</strong>' + logoStatus + '</p>' +\n  '<p><strong>Deliverables:</strong>' + deliverables + '</p>' +\n  '<p><strong>Existing Assets:</strong>' + existingAssets + '</p>' +\n  (imageDirection ? '<p><strong>Image Direction:</strong>' + imageDirection + '</p>' : '') +\n  (videoDirection ? '<p><strong>Video Direction:</strong>' + videoDirection + '</p>' : '') +\n  refsNote + '</div>' + proposalBody +\n  '<div class=\"note\">Click the button in this email to open the approval form. You can approve to start generation, or describe any changes you would like.</div>' +\n  '</body></html>';\nreturn [{ json: { proposalHtml: html, brandName: brandName, toEmail: toEmail } }];\n"
+      },
+      "id": "71b2b21b-e3f0-4826-a6ae-7e0a8eb910c9",
+      "name": "Build Proposal Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1568,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "={{ $json.toEmail }}",
+        "subject": "={{ $json.brandName }} — Your Creative Proposal is ready for review",
+        "message": "={{ $json.proposalHtml }}",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Your Decision",
+              "fieldType": "radio",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Approve & Generate"
+                  },
+                  {
+                    "option": "Request Changes"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What would you like to change? (required if requesting changes)",
+              "fieldType": "textarea",
+              "placeholder": "Describe the changes you want to the creative direction, deliverables, or visual approach…"
+            }
+          ]
+        },
+        "options": {
+          "responseFormTitle": "={{ $json.brandName }} — Proposal Review",
+          "responseFormButtonLabel": "Submit my decision"
+        }
+      },
+      "id": "b709c939-ffeb-4699-87b1-77e6247efcb5",
+      "name": "Send Approval Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        -1344,
+        96
+      ],
+      "webhookId": "d02dd6a5-5a5d-4536-b712-c42d1f0abe68",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "approved-check",
+              "leftValue": "={{ $json.data[\"Your Decision\"] }}",
+              "rightValue": "Approve & Generate",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "2911ac07-107f-448f-b549-32f83cba52ab",
+      "name": "Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1120,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o",
+          "cachedResultName": "gpt-4o"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=Brand Name: {{ $(\"Collect Form Data\").first().json[\"brand_name\"] }}\nBrand Concept: {{ $(\"Collect Form Data\").first().json[\"brand_concept\"] }}\nLogo Status: {{ $(\"Collect Form Data\").first().json[\"logo_status\"] }}\nExisting Assets / Notes: {{ $(\"Collect Form Data\").first().json[\"existing_assets\"] || \"None\" }}\nDeliverables Requested: {{ $(\"Collect Form Data\").first().json[\"deliverables\"] }}\n\nGenerate a full brand identity document with these sections in order:\n1. Brand Tagline / Slogan\n2. Brand Story / Origin Narrative (2-3 paragraphs)\n3. Target Audience Profile\n4. Brand Voice & Tone Guidelines (with dos and donts)\n5. Messaging Pillars (3-5 pillars)\n6. Color Palette (primary, 2 secondary, accent — include hex codes and meaning)\n7. Typography Recommendations (display font + body font from Google Fonts)\n8. Logo Concept or Improvement Notes (adapt based on logo status)"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {
+          "instructions": "You are a world-class brand strategist and creative director. When given a brand brief, produce a comprehensive, professional brand identity document. Format your entire response in clean HTML using <h2>, <h3>, <p>, <ul>, and <li> tags only — no markdown, no code fences, no inline styles.",
+          "maxTokens": 4096
+        }
+      },
+      "id": "42fd8532-2aab-415e-9abc-190c199312cd",
+      "name": "Generate Brand Identity",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        944,
+        864
+      ],
+      "retryOnFail": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "sjTtpq5JceWIje2A",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst formData = $('Collect Form Data').first().json;\nconst brandName = (formData['brand_name'] || 'Brand').slice(0, 30);\nconst concept = (formData['brand_concept'] || '').slice(0, 80);\nconst deliverables = Array.isArray(formData['deliverables']) ? formData['deliverables'].join(',') : (formData['deliverables'] || '');\nconst dir = (formData['image_direction'] || '').trim().slice(0, 60);\nconst dirNote = dir ? ', ' + dir : '';\nconst NP = 'no people, no faces, no humans';\nconst logoStatus = (formData['logo_status'] || '');\nconst needsLogoConcept = logoStatus.indexOf('Starting from scratch') > -1;\nconst needsLogoRefresh = logoStatus.indexOf('needs improvements') > -1;\nconst needsCampaign = deliverables.indexOf('Campaign Images') > -1;\nconst needsMoodBoard = deliverables.indexOf('Mood Board') > -1;\nconst needsCarousels = deliverables.indexOf('Social Media Carousels') > -1;\nconst scenes = [];\nif (needsLogoConcept) {\n  scenes.push({ sceneName: brandName + ' - Logo Wordmark', sceneType: 'logo',\n    prompt: 'professional wordmark logo for ' + brandName + ' brand, ' + concept + dirNote + ', white background, modern elegant typography, clean minimal design, graphic design presentation, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Logo Monogram', sceneType: 'logo',\n    prompt: 'monogram lettermark logo for ' + brandName + ', ' + concept + dirNote + ', geometric abstract initials, white background, refined scalable mark, premium brand identity, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Logo Icon', sceneType: 'logo',\n    prompt: 'icon emblem logo with brand name text for ' + brandName + ', ' + concept + dirNote + ', simple bold symbol, white background, premium feel, professional graphic design, ' + NP });\n}\nif (needsLogoRefresh) {\n  scenes.push({ sceneName: brandName + ' - Logo Refresh Wordmark', sceneType: 'logo',\n    prompt: 'refined modernized wordmark logo refresh for ' + brandName + ', ' + concept + dirNote + ', improved legibility, clean contemporary letterforms, white background, premium brand, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Logo Refresh Icon', sceneType: 'logo',\n    prompt: 'simplified modernized brand icon refresh for ' + brandName + ', ' + concept + dirNote + ', cleaner scalable mark, white background, contemporary design, ' + NP });\n}\nif (needsCampaign) {\n  scenes.push({ sceneName: brandName + ' - Hero Campaign', sceneType: 'campaign',\n    prompt: 'cinematic hero campaign photo for ' + brandName + ' brand' + dirNote + ', product textures materials objects, ultra-clean composition, premium editorial aesthetic, dramatic studio lighting, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Lifestyle Campaign', sceneType: 'campaign',\n    prompt: 'luxury lifestyle brand campaign for ' + brandName + dirNote + ', aspirational objects spaces atmosphere, warm golden editorial photography, premium magazine style, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Product Showcase', sceneType: 'campaign',\n    prompt: 'minimalist product showcase for ' + brandName + dirNote + ', studio quality lighting, soft shadows, brand-colored background, premium commercial photography, ' + NP });\n}\nif (needsMoodBoard) {\n  scenes.push({ sceneName: brandName + ' - Color Mood Board', sceneType: 'moodboard',\n    prompt: 'luxury brand mood board for ' + brandName + dirNote + ', color palette swatches, material textures, props, flat lay editorial composition, refined premium aesthetic, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Lifestyle Mood Board', sceneType: 'moodboard',\n    prompt: 'curated lifestyle mood board for ' + brandName + dirNote + ', aspirational environments objects details, magazine quality collage, brand world visual identity, ' + NP });\n}\nif (needsCarousels) {\n  scenes.push({ sceneName: brandName + ' - Carousel Hook', sceneType: 'carousel',\n    prompt: 'bold Instagram carousel opening slide for ' + brandName + dirNote + ', strong visual hook, product typography brand colors, editorial style, text space, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Carousel Value', sceneType: 'carousel',\n    prompt: 'clean minimal Instagram carousel info slide for ' + brandName + dirNote + ', brand aesthetic white space premium, suitable for text overlay, ' + NP });\n  scenes.push({ sceneName: brandName + ' - Carousel CTA', sceneType: 'carousel',\n    prompt: 'Instagram carousel CTA closing slide for ' + brandName + dirNote + ', bold product visual, brand colors, motivating premium design, ' + NP });\n}\nif (scenes.length === 0) {\n  scenes.push({ sceneName: brandName + ' - Brand Visual', sceneType: 'general',\n    prompt: 'premium brand visual for ' + brandName + ', ' + concept + dirNote + ', objects textures materials environments, elegant aspirational editorial photography, ' + NP });\n}\nreturn scenes.map(function(s) { return { json: s }; });\n"
+      },
+      "id": "4714159c-0b35-4a0e-9db7-8cce0949525c",
+      "name": "Generate Image Prompts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst uploads = $('Upload Images to Drive').all();\nconst imageLinks = uploads.map(function(item) {\n  return { name: item.json.name, url: item.json.webViewLink };\n});\nreturn [{ json: { imageLinks: imageLinks } }];\n"
+      },
+      "id": "6924daf9-8b64-453a-b36f-641231755236",
+      "name": "Collect Image Links",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst formData = $('Collect Form Data').first().json;\nconst brandName = formData['brand_name'] || 'Brand';\nconst brandConcept = (formData['brand_concept'] || '').slice(0, 200);\nconst deliverables = Array.isArray(formData['deliverables']) ? formData['deliverables'].join(',') : (formData['deliverables'] || '');\nconst videoDirection = (formData['video_direction'] || '').trim();\nconst needsVideos = deliverables.indexOf('Brand Videos') > -1;\nlet hasVideoRef = false;\ntry { hasVideoRef = !!($('Video Direction Page').first().binary || {}).video_references; } catch(e) {}\nif (!needsVideos) {\n  return [{ json: { videoLinks: [] } }];\n}\nconst directionNote = videoDirection ? ' Client video direction: ' + videoDirection + '.' : '';\nconst refNote = hasVideoRef ? ' The client uploaded a reference photo — use it as visual inspiration for the setting, mood, subject matter, and color palette of the video.' : '';\nconst styleContext = directionNote + refNote;\nconst videos = [\n  { videoName: brandName + ' - Brand Story', videoIndex: 1, prompt: 'A cinematic 8-second brand story video for ' + brandName + '. ' + brandConcept + '.' + styleContext + ' Elegant slow-motion shots, warm cinematic color grade, aspirational mood, premium feel. No text overlays.' },\n  { videoName: brandName + ' - Product Showcase', videoIndex: 2, prompt: 'A sleek 8-second product showcase video for ' + brandName + '.' + styleContext + ' Close-up detail shots with beautiful lighting, subtle camera motion, studio aesthetic, premium and refined. No text overlays.' },\n  { videoName: brandName + ' - Lifestyle Reel', videoIndex: 3, prompt: 'A dynamic 8-second lifestyle reel for ' + brandName + '.' + styleContext + ' Real-world usage moments, brand color palette visible, smooth transitions, editorial style. No text overlays.' },\n];\nreturn videos.map(function(v) { return { json: v }; });\n"
+      },
+      "id": "2635cc7f-ac6f-43c4-a50a-1ac469015efc",
+      "name": "Generate Video Prompts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1264,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "modelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "models/veo-3.1-generate-preview"
+        },
+        "prompt": "={{ $json.prompt }}",
+        "options": {
+          "durationSeconds": 8,
+          "aspectRatio": "16:9",
+          "binaryPropertyOutput": "data"
+        }
+      },
+      "id": "cc37239e-3566-44f1-813d-cd25f9917dd4",
+      "name": "Generate Videos",
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        1136
+      ],
+      "retryOnFail": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "bnWRZAHb4ghYdwgz",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{ $(\"Generate Video Prompts\").item.json.videoName }}.mp4",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive",
+          "cachedResultName": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {
+          "simplifyOutput": false
+        }
+      },
+      "id": "801297ba-22e7-42d9-8b6a-59873f27a19d",
+      "name": "Upload Videos to Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1712,
+        672
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "oeojJKUgfFHtn4X0",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://image.pollinations.ai/prompt/{{ encodeURIComponent($json.prompt) }}?model=flux-pro&width=1024&height=1024&nologo=true&enhance=true&seed={{ $itemIndex }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "4dc79b6f-df85-4d10-9271-a8e6e14da553",
+      "name": "Generate Images",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -448,
+        0
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "name": "={{ $(\"Generate Image Prompts\").item.json.sceneName }}.png",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive",
+          "cachedResultName": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {
+          "simplifyOutput": false
+        }
+      },
+      "id": "8392f34b-8050-45fe-8402-db2ecdebbf8d",
+      "name": "Upload Images to Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -224,
+        0
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "oeojJKUgfFHtn4X0",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone"
+          }
+        },
+        "options": {}
+      },
+      "id": "6d408e22-5f62-4d91-bfe2-4e2d9b7b32ac",
+      "name": "Share Images Publicly",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        0,
+        192
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "oeojJKUgfFHtn4X0",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "51dabe18-bb6d-49d5-acd2-9452769d8420",
+      "name": "Loop Images",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        112,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "={{ $(\"Collect Form Data\").first().json.email }}",
+        "subject": "={{ $(\"Collect Form Data\").first().json[\"brand_name\"] }} — We received your feedback",
+        "html": "=<!DOCTYPE html><html><head><meta charset=\"utf-8\"></head><body style=\"font-family:Georgia,serif;color:#1a1a1a;max-width:620px;margin:0 auto;padding:32px 24px;background:#fff\">\n<h2 style=\"color:#0d0d0d;border-bottom:2px solid #c9a84c;padding-bottom:8px\">Got it — we will refine the plan</h2>\n<p>Thank you for reviewing the <strong>{{ $(\"Collect Form Data\").first().json[\"brand_name\"] }}</strong> proposal.</p>\n{{ $json.data[\"What would you like to change? (required if requesting changes)\"] ? \"<p><strong>Your feedback:</strong></p><blockquote style=\\\"border-left:4px solid #c9a84c;margin:1rem 0;padding:8px 16px;color:#444;\\\">\" + $json.data[\"What would you like to change? (required if requesting changes)\"] + \"</blockquote>\" : \"\" }}\n<p style=\"margin-top:1.5rem\">We will review your notes, refine the creative direction, and send you an updated proposal shortly.</p>\n<p style=\"color:#888;font-size:.85rem;margin-top:2rem\">Brand Identity Builder &middot; Powered by n8n</p>\n</body></html>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "c97e88cc-a137-4f02-9f99-796053904bfa",
+      "name": "Send Changes Requested Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        -896,
+        192
+      ],
+      "webhookId": "731a415e-353d-4134-b475-8fb255eaebbb",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst deliverables = Array.isArray($('Collect Form Data').first().json['deliverables'])\n  ? $('Collect Form Data').first().json['deliverables'].join(',')\n  : ($('Collect Form Data').first().json['deliverables'] || '');\nconst needsVideos = deliverables.indexOf('Brand Videos') > -1;\nif (!needsVideos) {\n  return [{ json: { videoLinks: [] } }];\n}\nconst uploads = $('Upload Videos to Drive').all();\nconst videoLinks = uploads.map(function(item) {\n  return { name: item.json.name, url: item.json.webViewLink };\n});\nreturn [{ json: { videoLinks: videoLinks } }];\n"
+      },
+      "id": "d0346a54-e76d-4386-a215-95241be9658a",
+      "name": "Collect Video Links",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst formData = $('Collect Form Data').first().json;\nconst brandName = formData['brand_name'] || 'Client Brand';\nconst customerEmail = formData['email'] || '';\nconst deliverables = Array.isArray(formData['deliverables']) ? formData['deliverables'].join(', ') : (formData['deliverables'] || '');\nconst brandConcept = formData['brand_concept'] || '';\nconst imageLinks = ($('Collect Image Links').first().json.imageLinks) || [];\nconst videoLinks = ($('Collect Video Links').first().json.videoLinks) || [];\n\nconst imageRows = imageLinks.map(function(l, i) {\n  const bg = i % 2 === 0 ? '#f9f5ee' : '#ffffff';\n  return '<tr style=\"background:' + bg + '\"><td style=\"padding:9px 14px\">' + l.name + '</td><td style=\"padding:9px 14px\"><a href=\"' + l.url + '\" target=\"_blank\" style=\"color:#c9a84c\">Open in Drive</a></td></tr>';\n}).join('');\n\nconst videoRows = videoLinks.map(function(l, i) {\n  const bg = i % 2 === 0 ? '#f9f5ee' : '#ffffff';\n  return '<tr style=\"background:' + bg + '\"><td style=\"padding:9px 14px\">' + l.name + '</td><td style=\"padding:9px 14px\"><a href=\"' + l.url + '\" target=\"_blank\" style=\"color:#c9a84c\">Open in Drive</a></td></tr>';\n}).join('');\n\nconst html =\n  '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><style>' +\n  'body{font-family:Georgia,serif;color:#1a1a1a;max-width:780px;margin:0 auto;padding:32px 24px;background:#fff}' +\n  'h1{font-size:1.7rem;color:#0d0d0d;border-bottom:3px solid #c9a84c;padding-bottom:10px}' +\n  'h2{font-size:1.05rem;color:#444;margin-top:1.8rem}' +\n  'table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:.5rem}' +\n  'th{background:#c9a84c;color:#fff;padding:10px 14px;text-align:left}td{vertical-align:top}' +\n  '.info{background:#f9f5ee;border-left:4px solid #c9a84c;padding:12px 16px;margin:1rem 0;font-size:.9rem}' +\n  '.info p{margin:.25rem 0}' +\n  '.footer{margin-top:2rem;font-size:.82rem;color:#888;border-top:1px solid #eee;padding-top:14px}' +\n  '</style></head><body>' +\n  '<h1>Your Approval Needed: ' + brandName + '</h1>' +\n  '<div class=\"info\">' +\n  '<p><strong>Customer Email:</strong> ' + customerEmail + '</p>' +\n  '<p><strong>Brand:</strong> ' + brandName + '</p>' +\n  '<p><strong>Deliverables:</strong> ' + deliverables + '</p>' +\n  '<p><strong>Brand Concept:</strong> ' + brandConcept.substring(0, 200) + (brandConcept.length > 200 ? '...' : '') + '</p>' +\n  '</div>' +\n  '<p>Review all generated assets below before they are sent to the customer. Open each link in Google Drive to preview.</p>' +\n  (imageLinks.length > 0 ? '<h2>Images (' + imageLinks.length + ' files)</h2><table><thead><tr><th>File Name</th><th>Preview</th></tr></thead><tbody>' + imageRows + '</tbody></table>' : '') +\n  (videoLinks.length > 0 ? '<h2>Videos (' + videoLinks.length + ' files)</h2><table><thead><tr><th>File Name</th><th>Preview</th></tr></thead><tbody>' + videoRows + '</tbody></table>' : '') +\n  '<div class=\"footer\">Approve to release assets to the customer, or request modifications to revise before delivery.</div>' +\n  '</body></html>';\n\nreturn [{ json: { html: html, brandName: brandName, customerEmail: customerEmail } }];\n"
+      },
+      "id": "79af5e0c-0732-4296-95d7-2c042b3ee986",
+      "name": "Build Owner Asset Review",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2128,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "ayarihaninhns@gmail.com",
+        "subject": "=Action Required — Review Assets: {{ $json.brandName }}",
+        "message": "={{ $json.html }}",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Your Decision",
+              "fieldType": "radio",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Approve & Send to Client"
+                  },
+                  {
+                    "option": "Request Modifications"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Modification Notes (describe what to change)",
+              "fieldType": "textarea",
+              "placeholder": "e.g. Regenerate logo in a different style, remove the hero image, adjust the mood board palette..."
+            }
+          ]
+        },
+        "options": {
+          "responseFormTitle": "={{ $json.brandName }} — Asset Approval",
+          "responseFormButtonLabel": "Submit Decision"
+        }
+      },
+      "id": "b6e45031-1a26-47be-9585-761f2ce551a4",
+      "name": "Owner Review Assets",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2352,
+        48
+      ],
+      "webhookId": "c1f01c35-03d8-4eb3-92fa-4dd1826c15fa",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "owner-asset-check",
+              "leftValue": "={{ $json.data[\"Your Decision\"] }}",
+              "rightValue": "Approve & Send to Client",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b7e4b7f1-92a2-4609-95eb-ba5c1b0cc1ed",
+      "name": "Owner Approved Assets?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2576,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst formData = $('Collect Form Data').first().json;\nconst brandName = formData['brand_name'] || 'Your Brand';\nconst toEmail = formData['email'];\nconst aiOutput = $('Generate Brand Identity').first().json;\nconst aiText = (aiOutput.output && aiOutput.output[0] && aiOutput.output[0].content && aiOutput.output[0].content[0] && aiOutput.output[0].content[0].text) ? aiOutput.output[0].content[0].text : '';\nconst brandIdentityHtml = aiText.substring(0, 3000) + (aiText.length > 3000 ? '<p><em>... (preview truncated — full document will be in the final report)</em></p>' : '');\nconst imageLinks = ($('Collect Image Links').first().json.imageLinks) || [];\nconst videoLinks = ($('Collect Video Links').first().json.videoLinks) || [];\nconst imageLinksHtml = imageLinks.map(function(l) {\n  return '<li><a href=\"' + l.url + '\" target=\"_blank\" style=\"color:#c9a84c\">' + l.name + '</a></li>';\n}).join('');\nconst videoLinksHtml = videoLinks.map(function(l) {\n  return '<li><a href=\"' + l.url + '\" target=\"_blank\" style=\"color:#c9a84c\">' + l.name + '</a></li>';\n}).join('');\nconst mediaSection = (imageLinks.length > 0 || videoLinks.length > 0) ?\n  '<h2 style=\"color:#2c2c2c;margin-top:2rem;border-left:4px solid #c9a84c;padding-left:12px\">Generated Assets — Click to Review</h2>' +\n  '<p style=\"color:#555;font-size:.9rem;margin-bottom:1rem\">Open each link to review the file in Google Drive. Once satisfied, click the button below to approve.</p>' +\n  (imageLinks.length > 0 ? '<h3 style=\"color:#444\">Images & Visuals</h3><ul style=\"padding-left:1.5rem\">' + imageLinksHtml + '</ul>' : '') +\n  (videoLinks.length > 0 ? '<h3 style=\"color:#444\">Brand Videos</h3><ul style=\"padding-left:1.5rem\">' + videoLinksHtml + '</ul>' : '') : '';\nconst identitySection = brandIdentityHtml ?\n  '<h2 style=\"color:#2c2c2c;margin-top:2rem;border-left:4px solid #c9a84c;padding-left:12px\">Brand Identity Preview</h2>' +\n  '<div style=\"background:#fafafa;border:1px solid #e8e3d8;padding:1.5rem 2rem;margin:1rem 0;border-radius:4px;font-size:.88rem\">' + brandIdentityHtml + '</div>' : '';\nconst html =\n  '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><style>' +\n  'body{font-family:Georgia,serif;color:#1a1a1a;max-width:720px;margin:0 auto;padding:32px 24px;background:#fff}' +\n  'h1{font-size:1.8rem;color:#0d0d0d;border-bottom:3px solid #c9a84c;padding-bottom:10px}' +\n  'h2{font-size:1.2rem;color:#2c2c2c;margin-top:2rem}h3{font-size:1rem;color:#444}' +\n  'p{line-height:1.75}ul{padding-left:1.5rem}li{margin-bottom:6px;line-height:1.65}a{color:#c9a84c}' +\n  '.note{margin-top:2rem;padding:14px 18px;background:#f5f5f5;border-radius:4px;font-size:.85rem;color:#555}' +\n  '.footer{margin-top:3rem;font-size:.85rem;color:#888;border-top:1px solid #eee;padding-top:16px}' +\n  '</style></head><body>' +\n  '<h1>Your Assets Are Ready: ' + brandName + '</h1>' +\n  '<p>Everything has been generated and uploaded to Google Drive. Please review all assets below, then approve to receive the final report or request changes.</p>' +\n  mediaSection + identitySection +\n  '<div class=\"note\">Click the button in this email to open the review form. Approve to send the final brand identity report to your inbox, or request changes and we will note your feedback.</div>' +\n  '<div class=\"footer\">Brand Identity Builder &middot; Powered by n8n &amp; ChatGPT</div>' +\n  '</body></html>';\nreturn [{ json: { reviewHtml: html, brandName: brandName, toEmail: toEmail } }];\n"
+      },
+      "id": "a084bc33-46ed-4065-9566-ec5dac44046a",
+      "name": "Build Review Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2016,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "={{ $json.toEmail }}",
+        "subject": "={{ $json.brandName }} — Your assets are ready to review",
+        "message": "={{ $json.reviewHtml }}",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Your Decision",
+              "fieldType": "radio",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Approve & Send Final Report"
+                  },
+                  {
+                    "option": "Request Changes"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What would you like changed? (describe if requesting changes)",
+              "fieldType": "textarea",
+              "placeholder": "e.g. Regenerate the logo concept images in a more minimal style, or redo the hero campaign image with a darker palette…"
+            }
+          ]
+        },
+        "options": {
+          "responseFormTitle": "={{ $json.brandName }} — Asset Review",
+          "responseFormButtonLabel": "Submit my decision"
+        }
+      },
+      "id": "7f55160e-1ef0-46ae-9016-154ebace2530",
+      "name": "Review Assets",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2240,
+        48
+      ],
+      "webhookId": "037f2d4e-1fba-47cb-8d62-e1d6767f96b8",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "asset-check",
+              "leftValue": "={{ $json.data[\"Your Decision\"] }}",
+              "rightValue": "Approve & Send Final Report",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "bc05008f-71c2-49c4-9398-f72a9a0a4154",
+      "name": "Assets Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2464,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst formData = $('Collect Form Data').first().json;\nconst brandName = formData['brand_name'] || 'Your Brand';\nconst toEmail = formData['email'];\nconst aiOutput = $('Generate Brand Identity').first().json;\nconst bodyHtml = (aiOutput.output && aiOutput.output[0] && aiOutput.output[0].content && aiOutput.output[0].content[0] && aiOutput.output[0].content[0].text) ? aiOutput.output[0].content[0].text : '';\nconst imageLinks = ($('Collect Image Links').first().json.imageLinks) || [];\nconst videoLinks = ($('Collect Video Links').first().json.videoLinks) || [];\nconst needsImages = imageLinks.length > 0;\nconst imageLinksHtml = imageLinks.map(function(link) {\n  return '<li><a href=\"' + link.url + '\" target=\"_blank\">' + link.name + '</a></li>';\n}).join('');\nconst videoLinksHtml = videoLinks.map(function(link) {\n  return '<li><a href=\"' + link.url + '\" target=\"_blank\">' + link.name + '</a></li>';\n}).join('');\nconst mediaSection = (needsImages || videoLinks.length > 0) ?\n  '<h2>Visual Assets</h2>' +\n  (needsImages ? '<h3>Storyboard &amp; Images</h3><ul>' + (imageLinksHtml || '<li>No images generated</li>') + '</ul>' : '') +\n  (videoLinks.length > 0 ? '<h3>Brand Videos</h3><ul>' + videoLinksHtml + '</ul>' : '') : '';\nconst html =\n  '<!DOCTYPE html>' +\n  '<html><head><meta charset=\"utf-8\"><style>' +\n  'body{font-family:Georgia,serif;color:#1a1a1a;max-width:700px;margin:0 auto;padding:32px 24px;background:#fff}' +\n  'h1{font-size:2rem;color:#0d0d0d;border-bottom:3px solid #c9a84c;padding-bottom:12px}' +\n  'h2{font-size:1.35rem;color:#2c2c2c;margin-top:2rem}h3{font-size:1.1rem;color:#444}' +\n  'p{line-height:1.75}ul{padding-left:1.5rem}li{margin-bottom:6px;line-height:1.65}a{color:#c9a84c}' +\n  '.footer{margin-top:3rem;font-size:.85rem;color:#888;border-top:1px solid #eee;padding-top:16px}' +\n  '</style></head><body>' +\n  '<h1>Brand Identity: ' + brandName + '</h1>' +\n  bodyHtml + mediaSection +\n  '<div class=\"footer\">Generated by your Brand Identity Builder &middot; Powered by n8n &amp; ChatGPT</div>' +\n  '</body></html>';\nreturn [{ json: { html: html, brandName: brandName, toEmail: toEmail } }];\n"
+      },
+      "id": "8ceba724-b706-46d5-8d20-8f51b37f6802",
+      "name": "Format Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "={{ $json.toEmail }}",
+        "subject": "=Your Brand Identity for {{ $json.brandName }} is ready",
+        "html": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "a5a3e9bf-9d33-4125-adf3-40015d6317c4",
+      "name": "Send Brand Identity Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1392,
+        0
+      ],
+      "webhookId": "ac46b508-6b05-479b-9b0c-712f4ac1a85c",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "={{ $(\"Collect Form Data\").first().json.email }}",
+        "subject": "={{ $(\"Collect Form Data\").first().json[\"brand_name\"] }} — Asset change request received",
+        "html": "=<!DOCTYPE html><html><head><meta charset=\"utf-8\"></head><body style=\"font-family:Georgia,serif;color:#1a1a1a;max-width:620px;margin:0 auto;padding:32px 24px;background:#fff\">\n<h2 style=\"color:#0d0d0d;border-bottom:2px solid #c9a84c;padding-bottom:8px\">Change request noted</h2>\n<p>Thank you for reviewing your <strong>{{ $(\"Collect Form Data\").first().json[\"brand_name\"] }}</strong> assets.</p>\n{{ $json.data[\"What would you like changed? (describe if requesting changes)\"] ? \"<p><strong>Your feedback:</strong></p><blockquote style=\\\"border-left:4px solid #c9a84c;margin:1rem 0;padding:8px 16px;color:#444;\\\">\" + $json.data[\"What would you like changed? (describe if requesting changes)\"] + \"</blockquote>\" : \"\" }}\n<p style=\"margin-top:1.5rem\">We have noted your feedback. Please re-run the workflow with your updated directions when ready.</p>\n<p style=\"color:#888;font-size:.85rem;margin-top:2rem\">Brand Identity Builder &middot; Powered by n8n</p>\n</body></html>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "067c63ec-32a6-46d6-adc1-41974b667dfb",
+      "name": "Send Assets Changes Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2688,
+        144
+      ],
+      "webhookId": "712e0d16-d622-4077-a501-ffd0502a6722",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "ayarihaninhns@gmail.com",
+        "toEmail": "={{ $(\"Collect Form Data\").first().json.email }}",
+        "subject": "={{ $(\"Collect Form Data\").first().json[\"brand_name\"] }} — We are refining your assets",
+        "html": "=<!DOCTYPE html><html><head><meta charset=\"utf-8\"></head><body style=\"font-family:Georgia,serif;color:#1a1a1a;max-width:620px;margin:0 auto;padding:32px 24px;background:#fff\"><h2 style=\"color:#0d0d0d;border-bottom:2px solid #c9a84c;padding-bottom:8px\">We are putting the finishing touches on your assets</h2><p>Thank you for your patience.</p><p>Our team is reviewing your generated assets and making a few refinements to ensure everything is perfect before sending them your way.</p><p style=\"margin-top:1.5rem\">We will be in touch very shortly.</p><p style=\"color:#888;font-size:.85rem;margin-top:2rem\">Brand Identity Builder &middot; Powered by n8n</p></body></html>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "a429880c-c12b-47dc-8dae-80f98a59b686",
+      "name": "Send Customer Assets Pending",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2800,
+        144
+      ],
+      "webhookId": "e8342af0-4b73-466d-998e-8a9d8ad1c39c",
+      "credentials": {
+        "smtp": {
+          "id": "iFhkuYj3e1DxDS8e",
+          "name": "SMTP account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Brand Identity Form": {
+      "main": [
+        [
+          {
+            "node": "Deliverables Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deliverables Page": {
+      "main": [
+        [
+          {
+            "node": "Needs Image Direction?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs Image Direction?": {
+      "main": [
+        [
+          {
+            "node": "Image Direction Page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge After Images",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Image Direction Page": {
+      "main": [
+        [
+          {
+            "node": "Merge After Images",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge After Images": {
+      "main": [
+        [
+          {
+            "node": "Needs Video Direction?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Direction Page": {
+      "main": [
+        [
+          {
+            "node": "Merge After Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge After Videos": {
+      "main": [
+        [
+          {
+            "node": "Form Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs Video Direction?": {
+      "main": [
+        [
+          {
+            "node": "Video Direction Page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge After Videos",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Share Videos Publicly": {
+      "main": [
+        [
+          {
+            "node": "Merge After Video Collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge After Video Collect": {
+      "main": [
+        [
+          {
+            "node": "Collect Video Links",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs Videos?": {
+      "main": [
+        [
+          {
+            "node": "Generate Videos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge After Video Collect",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Form Complete": {
+      "main": [
+        [
+          {
+            "node": "Collect Form Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Form Data": {
+      "main": [
+        [
+          {
+            "node": "Save Submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Submission": {
+      "main": [
+        [
+          {
+            "node": "Get All Submissions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Submissions": {
+      "main": [
+        [
+          {
+            "node": "Build History Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build History Email": {
+      "main": [
+        [
+          {
+            "node": "Notify Owner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Owner": {
+      "main": [
+        [
+          {
+            "node": "Generate Proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Proposal": {
+      "main": [
+        [
+          {
+            "node": "Build Proposal Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Proposal Email": {
+      "main": [
+        [
+          {
+            "node": "Send Approval Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Approval Email": {
+      "main": [
+        [
+          {
+            "node": "Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved?": {
+      "main": [
+        [
+          {
+            "node": "Generate Brand Identity",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Changes Requested Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Brand Identity": {
+      "main": [
+        [
+          {
+            "node": "Generate Image Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Image Prompts": {
+      "main": [
+        [
+          {
+            "node": "Loop Images",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Image Links": {
+      "main": [
+        [
+          {
+            "node": "Generate Video Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video Prompts": {
+      "main": [
+        [
+          {
+            "node": "Needs Videos?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Videos": {
+      "main": [
+        [
+          {
+            "node": "Upload Videos to Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Videos to Drive": {
+      "main": [
+        [
+          {
+            "node": "Share Videos Publicly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Images": {
+      "main": [
+        [
+          {
+            "node": "Upload Images to Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Images to Drive": {
+      "main": [
+        [
+          {
+            "node": "Share Images Publicly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Images": {
+      "main": [
+        [
+          {
+            "node": "Collect Image Links",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate Images",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Video Links": {
+      "main": [
+        [
+          {
+            "node": "Build Owner Asset Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Owner Asset Review": {
+      "main": [
+        [
+          {
+            "node": "Owner Review Assets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Owner Review Assets": {
+      "main": [
+        [
+          {
+            "node": "Owner Approved Assets?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Owner Approved Assets?": {
+      "main": [
+        [
+          {
+            "node": "Build Review Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Customer Assets Pending",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Review Email": {
+      "main": [
+        [
+          {
+            "node": "Review Assets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Review Assets": {
+      "main": [
+        [
+          {
+            "node": "Assets Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Assets Approved?": {
+      "main": [
+        [
+          {
+            "node": "Format Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Assets Changes Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Email": {
+      "main": [
+        [
+          {
+            "node": "Send Brand Identity Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "maxConcurrency": 2
+  },
+  "versionId": "8002c0ca-5eac-4ab5-ac7b-a001fa593aae",
+  "meta": {
+    "instanceId": "7498828ccd6697c55979248ad8a994d1efd58724340a14d6b118d493c605610f"
+  },
+  "nodeGroups": [
+    {
+      "id": "988b0b25-2272-4019-ac77-0fe2a4c59226",
+      "name": "Multi-Step Intake Form",
+      "nodeIds": [
+        "24bea04a-79f6-4efc-87be-236d4b00293e",
+        "80d49902-d710-4634-88b5-5d5d2de7522c",
+        "627d0272-7a6f-4019-a3f8-da534c8b171a",
+        "e3f30cca-54d5-4dff-a8a8-655cceb372e2",
+        "1fb26e88-897d-47c7-8b8b-745747d4c6e4",
+        "718b534c-711d-4710-a6b6-c8bd56101b4a",
+        "c9d0f3ba-e96b-4ef7-95f4-031b432f4d8b",
+        "e0fc4a47-e125-4c68-8d85-87125c1204d8",
+        "4a5facc8-55a0-40ee-80fb-c699632e7c3b"
+      ],
+      "description": "Conditional multi-step form: shows image/video direction pages only when those deliverables are selected."
+    },
+    {
+      "id": "26b1342a-6a6c-44d3-b344-2b37317a770a",
+      "name": "Owner Notification",
+      "nodeIds": [
+        "d54d6ee1-9f1a-4020-b282-3b3c39bc6111",
+        "f7eccb61-2c5e-4df8-b2dc-7d1f455a4162",
+        "620757ec-1e4e-4b95-afcc-a0b95e974e55",
+        "914fcaea-b778-4c62-a369-acecca2738a6"
+      ],
+      "description": "Saves every submission to a Data Table, then emails the owner the new brief + full submission history."
+    },
+    {
+      "id": "64b942d5-aa98-4086-92d6-eb86669da4b0",
+      "name": "Intake & Proposal",
+      "nodeIds": [
+        "4cc0bda3-a1a1-4fa9-9fd6-fb175e74a067",
+        "71b2b21b-e3f0-4826-a6ae-7e0a8eb910c9",
+        "b709c939-ffeb-4699-87b1-77e6247efcb5"
+      ],
+      "description": "ChatGPT generates a creative proposal; client approves or requests changes via email."
+    },
+    {
+      "id": "0094cc3a-dfd4-42f1-949b-40ff27e50bc9",
+      "name": "Generate Brand Identity",
+      "nodeIds": [
+        "42fd8532-2aab-415e-9abc-190c199312cd"
+      ],
+      "description": "ChatGPT writes the full brand strategy, colors, typography, and messaging."
+    },
+    {
+      "id": "0e82fb59-f986-49f7-88bb-49bfb9357010",
+      "name": "Image Generation",
+      "nodeIds": [
+        "4714159c-0b35-4a0e-9db7-8cce0949525c",
+        "51dabe18-bb6d-49d5-acd2-9452769d8420",
+        "4dc79b6f-df85-4d10-9271-a8e6e14da553",
+        "8392f34b-8050-45fe-8402-db2ecdebbf8d",
+        "6d408e22-5f62-4d91-bfe2-4e2d9b7b32ac",
+        "6924daf9-8b64-453a-b36f-641231755236"
+      ],
+      "description": "Generates brand images via Pollinations.ai (free, no API key) one-at-a-time, uploads to Google Drive."
+    },
+    {
+      "id": "ce3ffd75-eac7-47c7-8318-0c9d32526585",
+      "name": "Video Generation",
+      "nodeIds": [
+        "2635cc7f-ac6f-43c4-a50a-1ac469015efc",
+        "4e997622-1ba4-4b3c-a87d-cd3ccf3cbdcd",
+        "cc37239e-3566-44f1-813d-cd25f9917dd4",
+        "801297ba-22e7-42d9-8b6a-59873f27a19d",
+        "e9e86715-6289-4a7e-ac1f-70a7e5510a52",
+        "b13e24b3-f8d8-4352-bf61-e27a79acd0a3",
+        "d0346a54-e76d-4386-a215-95241be9658a"
+      ],
+      "description": "Generates brand videos using Google Gemini Veo 3.1, uploads to Google Drive."
+    },
+    {
+      "id": "2525d269-b54a-4a6c-9083-811c0ef0c310",
+      "name": "Owner Asset Approval",
+      "nodeIds": [
+        "79af5e0c-0732-4296-95d7-2c042b3ee986",
+        "b6e45031-1a26-47be-9585-761f2ce551a4",
+        "b7e4b7f1-92a2-4609-95eb-ba5c1b0cc1ed"
+      ],
+      "description": "Owner reviews all generated assets first and approves before they are released to the customer."
+    },
+    {
+      "id": "9e17c3f2-e718-4024-9354-999c4389d6ba",
+      "name": "Email Delivery",
+      "nodeIds": [
+        "a084bc33-46ed-4065-9566-ec5dac44046a",
+        "7f55160e-1ef0-46ae-9016-154ebace2530",
+        "bc05008f-71c2-49c4-9398-f72a9a0a4154",
+        "067c63ec-32a6-46d6-adc1-41974b667dfb",
+        "8ceba724-b706-46d5-8d20-8f51b37f6802",
+        "a5a3e9bf-9d33-4125-adf3-40015d6317c4"
+      ],
+      "description": "Customer asset review gate: sends Drive links for customer approval, then delivers the final brand identity report by email."
+    }
+  ],
+  "id": "4LKnxQqIvz4XFOg8",
+  "tags": []
+}
