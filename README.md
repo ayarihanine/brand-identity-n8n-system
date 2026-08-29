@@ -86,15 +86,16 @@ The reference identity is designed to feel **fresh, natural, calm, and premium**
 ## Commercial preview
 
 <div align="center">
-  <a href="brand/Freshy_Matcha_advertisement_design_202608291218.mp4">
-    <img src="brand/brandstory.png" alt="Freshy Matcha commercial preview — click to open the MP4" width="820" />
-  </a>
-  <p><em>Click the preview to open the 8-second Freshy Matcha ad commercial.</em></p>
+  <video controls width="820" preload="metadata" aria-label="Freshy Matcha 8-second commercial">
+    <source src="https://github.com/ayarihanine/brand-identity-n8n-system/raw/refs/heads/main/brand/Freshy_Matcha_advertisement_design_202608291218.mp4" type="video/mp4" />
+    <a href="brand/Freshy_Matcha_advertisement_design_202608291218.mp4">Open the Freshy Matcha commercial video</a>
+  </video>
+  <p><em>Freshy Matcha commercial · 8 seconds · click the controls to play.</em></p>
 </div>
 
 The commercial opens with the line **“FRESH IN TASTE, PURE IN NATURE”**, transitions from a split-screen editorial layout into a product hero composition, and closes on a mindful lifestyle message. Its slow, rhythmic pacing, natural sunlight, leaf shadows, matcha bowl, pouch, and tin are consistent with the identity system documented in this repository.
 
-> **Production note:** GitHub does not consistently render local MP4 files inline in repository Markdown. The preview above links directly to the committed video file so it can be opened from the repository.
+> **Production note:** The commercial is embedded directly with an HTML5 video player and includes a repository-relative fallback link. If a GitHub client does not render the player, use the fallback link inside the video block to open the committed MP4.
 
 ## Repository structure
 
@@ -152,15 +153,16 @@ The workflow is intentionally not a fire-and-forget generator. A brief is saved,
 
 This structure makes the system suitable for repeatable creative operations: it preserves a record of the brief, creates clear hand-off points, and keeps production separate from final delivery.
 
-## Asset gallery
+## Asset index
 
-![Freshy Matcha brand applications — light presentation](brand/brand1.png)
+The repository keeps the complete source package available without repeating the same visuals throughout this README. Use the links below to open the remaining references directly.
 
-![Freshy Matcha brand applications — dark presentation](brand/brand2.png)
-
-![Freshy Matcha brand story](brand/brandstory.png)
-
-![Freshy Matcha typography system](brand/typography.png)
+| Asset | Use |
+| --- | --- |
+| [`brand2.png`](brand/brand2.png) | Dark presentation board with packaging and applications |
+| [`brandstory.png`](brand/brandstory.png) | Light brand-story composition |
+| [`typography.png`](brand/typography.png) | Typography and visual-system reference |
+| [`FreshyMatcha-logo.png`](brand/FreshyMatcha-logo.png) | Primary logo artwork |
 
 ## Notes
 
