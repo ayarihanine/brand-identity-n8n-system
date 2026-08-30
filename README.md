@@ -11,6 +11,15 @@
   </p>
 </div>
 
+<p align="center">
+  <a href="#project-overview">Overview</a> ·
+  <a href="#automation-architecture">Automation</a> ·
+  <a href="#brand-direction">Brand system</a> ·
+  <a href="#commercial-film">Commercial</a> ·
+  <a href="#setup">Setup</a> ·
+  <a href="docs/WORKFLOW_OPERATIONS.md">Operations guide</a>
+</p>
+
 > **Fresh in taste. Pure in nature.**
 >
 > Freshy Matcha is positioned as more than a drink: a mindful ritual rooted in pure ingredients, honest choices, balance, and intention.
@@ -110,6 +119,18 @@ The eight-second film opens on **“FRESH IN TASTE, PURE IN NATURE”**, transit
 
 ## 09 · Repository map
 
+The repository is structured so that a reviewer can understand the project quickly, an operator can configure the workflow safely, and a contributor can make focused changes without searching through generated assets.
+
+| Guide | Purpose |
+| --- | --- |
+| [`docs/WORKFLOW_OPERATIONS.md`](docs/WORKFLOW_OPERATIONS.md) | Deployment, integration, testing, and production checklist. |
+| [`docs/ASSET_GUIDE.md`](docs/ASSET_GUIDE.md) | Visual asset inventory and reuse guidance. |
+| [`BEHANCE_PROJECT.md`](BEHANCE_PROJECT.md) | Behance-ready case study narrative and publishing sequence. |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution and review standards. |
+| [`SECURITY.md`](SECURITY.md) | Credential, data, and public-sharing policy. |
+
+
+
 ```text
 .
 ├── README.md
@@ -165,6 +186,12 @@ The system is designed for **repeatable creative production with human control**
 ![Freshy Matcha light brand story](brand/brandstory.png)
 
 The light brand-story board demonstrates the same identity in a softer editorial treatment: cream space, natural light, tactile materials, and concise messaging around presence, balance, and mindful ritual.
+
+## Project standards
+
+This repository follows a few simple standards: workflow exports remain valid JSON, credentials stay outside version control, visual assets retain descriptive filenames, documentation reflects user-facing changes, and production configuration is reviewed before activation.
+
+For operational details, read the [Workflow Operations Guide](docs/WORKFLOW_OPERATIONS.md). For asset usage, read the [Asset Guide](docs/ASSET_GUIDE.md). Contributions should follow [CONTRIBUTING.md](CONTRIBUTING.md), and security concerns should follow [SECURITY.md](SECURITY.md).
 
 ## References
 

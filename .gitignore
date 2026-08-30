@@ -1,0 +1,19 @@
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Operating-system and editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Temporary analysis and export files
+/tmp/
+*.log
+*.tmp
+
+# Local n8n runtime data
+.n8n/
