@@ -1,57 +1,76 @@
 <div align="center">
-  <img src="brand/FreshyMatcha-logo.png" alt="Freshy Matcha logo" width="460" />
+  <img src="brand/FreshyMatcha-logo.png" alt="Freshy Matcha logo" width="420" />
 
-  <h1>Freshy Matcha · Brand Identity Builder</h1>
-  <p><strong>An approval-led n8n system for turning a creative brief into a complete, reviewed brand identity and campaign asset package.</strong></p>
+  # Brand Identity Builder
+
+  **An approval-led n8n system for turning a creative brief into a coherent brand identity and campaign-ready asset package.**
 
   <p>
-    <a href="n8n%20system/Brand%20Identity%20Builder.json">Workflow export</a> ·
-    <a href="brand/Freshy_Matcha_advertisement_design_202608291218.mp4">Open the MP4 commercial</a> ·
-    <a href="brand/">Browse all brand assets</a>
+    <a href="n8n%20system/Brand%20Identity%20Builder.json">Import the workflow</a> ·
+    <a href="docs/WORKFLOW_OPERATIONS.md">Read the operations guide</a> ·
+    <a href="brand/">Explore the brand assets</a>
   </p>
 </div>
 
 <p align="center">
-  <a href="#project-overview">Overview</a> ·
-  <a href="#automation-architecture">Automation</a> ·
-  <a href="#brand-direction">Brand system</a> ·
-  <a href="#commercial-film">Commercial</a> ·
-  <a href="#setup">Setup</a> ·
-  <a href="docs/WORKFLOW_OPERATIONS.md">Operations guide</a>
+  <img src="brand/brandstory2.png" alt="Freshy Matcha brand story showing ceremonial matcha products and the mindful ritual positioning" width="100%" />
 </p>
 
 > **Fresh in taste. Pure in nature.**
 >
-> Freshy Matcha is positioned as more than a drink: a mindful ritual rooted in pure ingredients, honest choices, balance, and intention.
+> Freshy Matcha is the reference brand for this system: a calm, natural, quietly premium identity built around pure ingredients, mindful rituals, sustainable choices, and intentional design.
 
-![Freshy Matcha brand story](brand/brandstory2.png)
+## What this project is
 
-## 01 · Project overview
+**Brand Identity Builder** is a reusable n8n production workflow and visual case study. It guides a customer from an initial brief through proposal approval, AI-assisted identity development, campaign asset generation, human review, and final delivery.
 
-**Brand Identity Builder** is an n8n workflow for creative operations. It guides a customer from an initial brand brief through proposal approval, AI-assisted identity generation, campaign production, human review, and final delivery.
+The system is designed for **repeatable creative operations with human control**. Automation removes repetitive coordination work, while approval gates keep the creative direction, generated assets, and delivery decisions visible to the people responsible for quality.
 
-The repository uses Freshy Matcha as the reference brand and visual case study. The system is designed to make brand production repeatable without removing the creative checkpoints that protect quality, consistency, and client alignment.
+### At a glance
 
-## 02 · What the system does
-
-| Capability | Outcome |
+| | |
 | --- | --- |
-| **Guided intake** | Captures brand concept, logo status, existing assets, contact details, and requested deliverables through n8n Forms. |
+| **Workflow platform** | n8n |
+| **Reference brand** | Freshy Matcha |
+| **Primary output** | Reviewed brand identity and campaign asset package |
+| **Core model** | Brief → proposal → approval → production → review → delivery |
+| **Storage and delivery** | Google Drive, email, and environment-specific integrations |
+| **Repository type** | Importable workflow export plus visual identity reference package |
+
+## Why the approval model matters
+
+Creative automation should accelerate production without turning judgment into a black box. This workflow records the brief, pauses before production, routes assets through owner and customer review, and supports change requests before final delivery.
+
+That structure creates a clear operating boundary:
+
+1. **The customer describes the brand and selects deliverables.**
+2. **The system creates a proposal and waits for approval.**
+3. **Approved direction is translated into identity and campaign assets.**
+4. **Generated outputs are collected, stored, and reviewed.**
+5. **Changes return to the appropriate stage instead of restarting everything.**
+6. **Only approved work is delivered.**
+
+## What the workflow handles
+
+| Capability | Result |
+| --- | --- |
+| **Guided intake** | Captures the brand concept, logo status, existing assets, contact details, and requested deliverables through n8n Forms. |
 | **Conditional briefing** | Requests image or video direction only when those deliverables are selected. |
-| **Proposal approval** | Generates a creative proposal and pauses production until approval is received. |
-| **Identity generation** | Produces structured brand identity direction from the approved brief. |
-| **Image production** | Creates image prompts, generates campaign visuals, uploads them, and shares them for review. |
-| **Video production** | Creates video prompts and coordinates short-form brand video generation and collection. |
-| **Review loops** | Supports owner review, customer review, change requests, and re-approval. |
-| **Delivery** | Sends final identity and approved campaign assets through the configured delivery flow. |
+| **Proposal gate** | Sends a creative proposal and pauses the workflow until approval is received. |
+| **Identity direction** | Produces structured brand identity guidance from the approved brief. |
+| **Campaign production** | Coordinates image prompts, visual generation, video direction, and asset collection. |
+| **Review loops** | Supports owner review, customer review, approval, and change requests. |
+| **Delivery** | Shares the approved identity document and final campaign assets through the configured delivery flow. |
 
-## 03 · Automation architecture
+## Automation architecture
 
-![Brand Identity Builder workflow](n8n%20system/automationWorkflow.png)
+<p align="center">
+  <img src="n8n%20system/automationWorkflow.png" alt="Wide n8n Brand Identity Builder workflow architecture map" width="100%" />
+</p>
 
 The workflow is organized as a controlled production pipeline rather than a single generation step.
 
-| Phase | Process |
+| Stage | Flow |
 | --- | --- |
 | **Brief** | Brand Identity Form → Deliverables Page → conditional image/video direction pages |
 | **Proposal** | Collect Form Data → Save Submission → Generate Proposal → approval email |
@@ -60,145 +79,101 @@ The workflow is organized as a controlled production pipeline rather than a sing
 | **Review** | Owner review → customer review → change loop or approval |
 | **Deliver** | Send the approved identity document and campaign assets to the customer |
 
-## 04 · Brand direction
+## The Freshy Matcha identity
 
-Freshy Matcha combines editorial sophistication with a calm, natural product world. The creative system is deliberately restrained: forest greens and matcha tones carry the brand, warm neutrals create breathing room, and tactile product photography makes the ritual feel tangible.
+The reference identity balances editorial sophistication with a grounded, natural product world. Deep greens create recognition and premium contrast. Warm neutrals give the system space to breathe. Tactile materials, natural light, leaves, ceramic, stone, bamboo, matcha powder, and product-first compositions make the ritual tangible.
 
-![Freshy Matcha brand applications](brand/brand1.png)
+<p align="center">
+  <img src="brand/brand1.png" alt="Freshy Matcha light identity board with stationery, packaging, and product applications" width="49%" />
+  <img src="brand/brand2.png" alt="Freshy Matcha dark identity board with premium packaging and brand applications" width="49%" />
+</p>
 
-| Brand attribute | Direction |
+| Brand dimension | Direction |
 | --- | --- |
 | **Positioning** | A mindful matcha ritual for slowing down, recentering, and showing up with intention. |
 | **Values** | Pure ingredients, mindful rituals, sustainable choices, and care in every interaction. |
 | **Voice** | Calm, confident, warm, intentional, and quietly premium. |
-| **Photography** | Natural sunlight, leaf shadows, ceramic, stone, bamboo, matcha powder, and product-first compositions. |
-| **Typography** | Playfair Display for editorial headlines; Montserrat for clear supporting copy. |
+| **Visual language** | Editorial typography, botanical forms, natural light, tactile surfaces, and restrained green contrast. |
+| **Applications** | Packaging, stationery, cups, envelopes, seals, social content, environmental touchpoints, and campaign layouts. |
 
-## 05 · Brand applications
+## Campaign system in practice
 
-![Freshy Matcha dark brand applications](brand/brand2.png)
+The visual package extends the identity into a consistent content system rather than isolated mockups. The social grid below demonstrates how the same voice can move between product photography, ritual education, seasonal storytelling, and concise editorial messaging.
 
-The identity is built to travel across packaging, stationery, cups, envelopes, seals, social content, and campaign layouts. Its dark presentation mode uses cream typography and matcha-green accents to create a premium contrast without losing the natural character of the brand.
+<p align="center">
+  <img src="brand/06_social_media_grid.png" alt="Freshy Matcha six-panel social media campaign grid" width="49%" />
+  <img src="brand/brandstory2_improved.png" alt="Freshy Matcha extended brand story and product presentation board" width="49%" />
+</p>
 
-## 06 · Color system
+The `brand/` directory also includes stationery, desk objects, wearables, accessories, environment concepts, packaging scenes, signage, and additional campaign directions. These assets make the repository useful both as a workflow demonstration and as a complete visual reference set.
 
-![Freshy Matcha color palette](brand/colorPalette.png)
+## Commercial film
 
-| Color | Hex | Function |
-| --- | --- | --- |
-| Matcha Cream | `#E8F2E3` | Fresh, clean background |
-| Light Matcha | `#C8DDB6` | Calm supporting tone |
-| Fresh Green | `#A4C68A` | Natural accent |
-| Matcha Leaf | `#7BA66B` | Vibrant mid-tone |
-| Deep Green | `#5A8F4B` | Strong brand accent |
-| Forest Shade | `#2E4D2E` | Premium contrast and grounding |
-| Soft Cream | `#F6F6F1` | Warm neutral canvas |
-| Natural Clay | `#E7E3D9` | Earthy neutral accent |
-| Matcha Stone | `#2A2A27` | High-contrast text |
+The repository includes an animated preview and the original MP4 commercial. The preview is convenient inside GitHub; the MP4 is the source presentation format with native playback and audio.
 
-## 07 · Typography system
-
-![Freshy Matcha typography system](brand/typography.png)
-
-**Playfair Display** provides the distinctive editorial voice for headlines and key statements. **Montserrat** keeps body copy, labels, and supporting information modern, friendly, and readable. Together they express the project’s central balance: ritual and clarity, heritage and contemporary restraint.
-
-## 08 · Commercial film
-
-The commercial is included in two complementary formats: an inline animated preview that plays directly in GitHub’s README view, and the original MP4 for full-quality playback with audio.
-
-<div align="center">
+<p align="center">
   <a href="brand/Freshy_Matcha_advertisement_design_202608291218.mp4">
-    <img src="brand/Freshy_Matcha_advertisement_preview.gif" alt="Playing animated preview of the Freshy Matcha commercial — click to open the original MP4" width="760" />
+    <img src="brand/Freshy_Matcha_advertisement_preview.gif" alt="Animated preview of the Freshy Matcha commercial; click to open the original MP4" width="760" />
   </a>
-  <p><strong>Click the animated preview to open the original MP4 commercial.</strong></p>
-</div>
+</p>
 
-The eight-second film opens on **“FRESH IN TASTE, PURE IN NATURE”**, transitions from a split-screen editorial treatment into a product hero, and closes with a mindful lifestyle message. The pacing is slow and rhythmic, with natural sunlight, leaf shadows, a ceremonial matcha bowl, pouch, and tin reinforcing the brand’s calm premium tone.
+<p align="center"><strong>Click the preview to open the original commercial.</strong></p>
 
-> **Playback note:** GitHub can display the animated preview directly in the README. The original MP4 is linked from the preview and from the project links above so it can be opened with native video controls and audio.
-
-## 09 · Repository map
-
-The repository is structured so that a reviewer can understand the project quickly, an operator can configure the workflow safely, and a contributor can make focused changes without searching through generated assets.
-
-| Guide | Purpose |
-| --- | --- |
-| [`docs/WORKFLOW_OPERATIONS.md`](docs/WORKFLOW_OPERATIONS.md) | Deployment, integration, testing, and production checklist. |
-| [`docs/ASSET_GUIDE.md`](docs/ASSET_GUIDE.md) | Visual asset inventory and reuse guidance. |
-| [`BEHANCE_PROJECT.md`](BEHANCE_PROJECT.md) | Behance-ready case study narrative and publishing sequence. |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution and review standards. |
-| [`SECURITY.md`](SECURITY.md) | Credential, data, and public-sharing policy. |
-
-
-
-```text
-.
-├── README.md
-├── brand/
-│   ├── FreshyMatcha-logo.png
-│   ├── Freshy_Matcha_advertisement_design_202608291218.mp4
-│   ├── Freshy_Matcha_advertisement_preview.gif
-│   ├── brand1.png
-│   ├── brand2.png
-│   ├── brandstory.png
-│   ├── brandstory2.png
-│   ├── colorPalette.png
-│   └── typography.png
-└── n8n system/
-    ├── Brand Identity Builder.json
-    └── automationWorkflow.png
-```
+## Repository map
 
 | Location | Purpose |
 | --- | --- |
-| `brand/` | Complete Freshy Matcha identity, application boards, palette, typography, logo, and commercial assets. |
-| `n8n system/` | Importable n8n workflow export and architecture reference. |
+| [`n8n system/Brand Identity Builder.json`](n8n%20system/Brand%20Identity%20Builder.json) | Importable n8n workflow export. |
+| [`n8n system/automationWorkflow.png`](n8n%20system/automationWorkflow.png) | Workflow architecture reference. |
+| [`brand/`](brand/) | Freshy Matcha identity, applications, campaign visuals, and commercial assets. |
+| [`docs/WORKFLOW_OPERATIONS.md`](docs/WORKFLOW_OPERATIONS.md) | Deployment, integration, testing, and production checklist. |
+| [`docs/ASSET_GUIDE.md`](docs/ASSET_GUIDE.md) | Visual asset inventory and reuse guidance. |
+| [`BEHANCE_PROJECT.md`](BEHANCE_PROJECT.md) | Case-study narrative and publishing sequence. |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution and review standards. |
+| [`SECURITY.md`](SECURITY.md) | Credential, data, and public-sharing policy. |
 
-## 10 · Setup
+## Setup and deployment
+
+This repository contains an **n8n workflow export**, not a turnkey hosted service. Credentials, folders, approval URLs, email settings, generation providers, and storage policies belong to the target n8n workspace.
 
 ### Requirements
 
-Use an n8n instance with permission to import workflows, SMTP access for transactional email, Google Drive access for asset storage and sharing, the AI credentials expected by the workflow nodes, and an available n8n Data Table for submission history.
+Use an n8n instance with permission to import workflows, SMTP access for transactional email, Google Drive access for storage and sharing, the AI credentials expected by the workflow nodes, and an available n8n Data Table for submission history.
 
-### Import and configure
+### Import safely
 
-1. Import [`Brand Identity Builder.json`](n8n%20system/Brand%20Identity%20Builder.json) into n8n.
-2. Replace the exported credential mappings with credentials from your own workspace.
+1. Import [`Brand Identity Builder.json`](n8n%20system/Brand%20Identity%20Builder.json) into a non-production n8n workspace.
+2. Replace exported credential mappings with credentials owned by the target workspace.
 3. Confirm the submission Data Table and its mapped columns.
-4. Review AI generation nodes, HTTP request endpoints, email routing, approval URLs, and Google Drive destinations.
+4. Review AI generation nodes, HTTP Request endpoints, email routing, approval URLs, and Google Drive destinations.
 5. Test with non-production recipients and storage before activation.
-6. Activate the workflow only after the proposal, review, and delivery paths have been tested end to end.
+6. Activate the workflow only after proposal, review, change-request, and delivery paths have been tested end to end.
 
-| Configuration area | Check before production |
-| --- | --- |
-| **AI providers** | OpenAI and Google Gemini credentials are connected to the intended nodes. |
-| **Email** | SMTP sender, recipients, approval links, and change-request routing are correct. |
-| **Google Drive** | Upload destinations and public-sharing behavior meet your organization’s policy. |
-| **External services** | HTTP endpoints, authentication, payloads, and response fields match the selected generation services. |
-| **Security** | Secrets remain in n8n credentials, and public asset sharing is intentional. |
+### Integration map
 
-## 11 · Why the approval model matters
+| Integration | Responsibility | Operator configuration |
+| --- | --- | --- |
+| **n8n Forms** | Collects the brief, deliverables, and optional creative direction. | Form paths, fields, and response URLs. |
+| **OpenAI / Google Gemini** | Supports AI-assisted identity, prompt, or image generation where configured. | Credentials, models, request settings, and output fields. |
+| **Google Drive** | Stores generated assets and applies sharing rules. | OAuth credential, folders, and sharing policy. |
+| **SMTP** | Sends proposals, review updates, change requests, and delivery messages. | Sender identity, recipients, and routing. |
+| **n8n Data Table** | Stores submitted brief data and status context. | Table identifier and matching columns. |
+| **HTTP Request** | Connects external generation or delivery services. | Endpoint, authentication, payload, and response mapping. |
 
-The system is designed for **repeatable creative production with human control**. A submitted brief is recorded, a proposal is reviewed before generation, assets are checked by the owner and customer, and requested changes can return to the appropriate loop. This keeps the creative process transparent while reducing repetitive coordination work.
+For the complete deployment sequence and production checklist, read the [Workflow Operations Guide](docs/WORKFLOW_OPERATIONS.md).
 
-## 12 · Additional reference
+## Security boundary
 
-![Freshy Matcha light brand story](brand/brandstory.png)
+Keep API keys, SMTP passwords, OAuth tokens, and private workspace identifiers inside n8n credentials. Do not commit secrets to the repository or place them in workflow expressions. Separate test and production folders, verify public-sharing behavior before delivery, and review approval links before activating the workflow.
 
-The light brand-story board demonstrates the same identity in a softer editorial treatment: cream space, natural light, tactile materials, and concise messaging around presence, balance, and mindful ritual.
-
-## Project standards
-
-This repository follows a few simple standards: workflow exports remain valid JSON, credentials stay outside version control, visual assets retain descriptive filenames, documentation reflects user-facing changes, and production configuration is reviewed before activation.
-
-For operational details, read the [Workflow Operations Guide](docs/WORKFLOW_OPERATIONS.md). For asset usage, read the [Asset Guide](docs/ASSET_GUIDE.md). Contributions should follow [CONTRIBUTING.md](CONTRIBUTING.md), and security concerns should follow [SECURITY.md](SECURITY.md).
+See [`SECURITY.md`](SECURITY.md) for the repository’s security and public-sharing policy.
 
 ## References
 
-1. [`Brand Identity Builder.json`](n8n%20system/Brand%20Identity%20Builder.json) — importable n8n workflow.
-2. [`automationWorkflow.png`](n8n%20system/automationWorkflow.png) — workflow architecture overview.
-3. [`brand/`](brand/) — complete visual identity and campaign asset package.
-4. [`Freshy_Matcha_advertisement_design_202608291218.mp4`](brand/Freshy_Matcha_advertisement_design_202608291218.mp4) — original commercial video.
+[1]: n8n%20system/Brand%20Identity%20Builder.json "Importable Brand Identity Builder n8n workflow"
+[2]: n8n%20system/automationWorkflow.png "Brand Identity Builder workflow architecture"
+[3]: brand/ "Freshy Matcha visual identity and campaign asset package"
+[4]: brand/Freshy_Matcha_advertisement_design_202608291218.mp4 "Freshy Matcha original commercial film"
 
 <div align="center">
   <sub>Built for thoughtful, repeatable brand production.</sub>
