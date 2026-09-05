@@ -180,17 +180,17 @@ See [`SECURITY.md`](SECURITY.md) for the repository’s security and public-shar
 </div>
 
 
-## Complete visual asset gallery
+## Visual direction
 
-The full `brand/` library is presented as an editorial gallery rather than a thumbnail wall. Each frame is intentionally large so the packaging, materials, typography, and spatial details remain legible.
+The README now treats the brand library like a presentation: a few strong visual statements lead the story, while the complete production archive remains available below without overwhelming the page.
 
-### Identity foundations
+### Selected identity spreads
 
 <p align="center">
-  <img src="brand/brand1_improved.png" alt="Freshy Matcha expanded light identity and packaging board" width="78%" />
+  <img src="brand/brand1_improved.png" alt="Freshy Matcha expanded light identity and packaging board" width="88%" />
 </p>
 
-<p align="center"><strong>Identity system · packaging, stationery, and brand touchpoints</strong></p>
+<p align="center"><strong>Identity system · packaging, stationery, and touchpoints</strong></p>
 
 <p align="center">
   <img src="brand/freshymatcha_brandstory_clean_product_led.png" alt="Freshy Matcha clean product-led brand story board" width="48%" />
@@ -198,11 +198,33 @@ The full `brand/` library is presented as an editorial gallery rather than a thu
 </p>
 
 <p align="center">
+  <img src="brand/05_environment.png" alt="Freshy Matcha branded environment and spatial applications" width="88%" />
+</p>
+
+<p align="center"><strong>Brand world · a calm identity carried into space</strong></p>
+
+<p align="center">
+  <img src="brand/freshy_matcha_idea_02_empty_tea_bar.png" alt="Freshy Matcha empty tea bar interior concept" width="88%" />
+</p>
+
+<p align="center"><strong>Spatial direction · retail as a mindful ritual</strong></p>
+
+<p align="center">
+  <img src="brand/freshy_matcha_hero_exterior_refined.png" alt="Freshy Matcha refined exterior hero scene" width="48%" />
+  <img src="brand/freshy_matcha_original_brand_world.png" alt="Freshy Matcha original brand world presentation" width="48%" />
+</p>
+
+<details>
+<summary><strong>Browse the complete production asset archive</strong> · 29 additional visual assets</summary>
+
+### Identity foundations
+
+<p align="center">
   <img src="brand/logos.png" alt="Freshy Matcha logo exploration and lockup board" width="48%" />
   <img src="brand/freshy_matcha_typography_only.png" alt="Freshy Matcha typography and editorial layout reference" width="48%" />
 </p>
 
-### Physical brand world
+### Physical applications
 
 <p align="center">
   <img src="brand/01_stationery_suite.png" alt="Freshy Matcha stationery suite applications" width="48%" />
@@ -214,31 +236,16 @@ The full `brand/` library is presented as an editorial gallery rather than a thu
   <img src="brand/04_accessories.png" alt="Freshy Matcha accessories and branded objects" width="48%" />
 </p>
 
-<p align="center">
-  <img src="brand/05_environment.png" alt="Freshy Matcha branded environment and spatial applications" width="78%" />
-</p>
-
-<p align="center"><strong>Physical applications · from everyday objects to branded environments</strong></p>
-
-### Retail and spatial concepts
-
-<p align="center">
-  <img src="brand/freshy_matcha_hero_exterior_refined.png" alt="Freshy Matcha refined exterior hero scene" width="78%" />
-</p>
+### Retail and packaging concepts
 
 <p align="center">
   <img src="brand/freshy_matcha_idea_01_packaging_shelf.png" alt="Freshy Matcha packaging shelf concept" width="48%" />
-  <img src="brand/freshy_matcha_idea_02_empty_tea_bar.png" alt="Freshy Matcha empty tea bar interior concept" width="48%" />
-</p>
-
-<p align="center">
   <img src="brand/freshy_matcha_idea_03_gift_box.png" alt="Freshy Matcha gift box concept" width="48%" />
-  <img src="brand/freshy_matcha_idea_04_wayfinding_system.png" alt="Freshy Matcha wayfinding system concept" width="48%" />
 </p>
 
 <p align="center">
+  <img src="brand/freshy_matcha_idea_04_wayfinding_system.png" alt="Freshy Matcha wayfinding system concept" width="48%" />
   <img src="brand/freshy_matcha_idea_05_stationery_pattern.png" alt="Freshy Matcha stationery pattern concept" width="48%" />
-  <img src="brand/freshy_matcha_original_brand_world.png" alt="Freshy Matcha original brand world presentation" width="48%" />
 </p>
 
 ### Standalone applications
@@ -261,19 +268,21 @@ The full `brand/` library is presented as an editorial gallery rather than a thu
 ### Brand-world applications
 
 <p align="center">
-  <img src="brand/freshy_matcha_original_01_ritual_station.png" alt="Freshy Matcha ritual station concept" width="78%" />
-</p>
-
-<p align="center">
+  <img src="brand/freshy_matcha_original_01_ritual_station.png" alt="Freshy Matcha ritual station concept" width="48%" />
   <img src="brand/freshy_matcha_original_02_transit_kiosk.png" alt="Freshy Matcha transit kiosk concept" width="48%" />
-  <img src="brand/freshy_matcha_original_03_delivery_crate_balanced.png" alt="Freshy Matcha balanced delivery crate concept" width="48%" />
 </p>
 
 <p align="center">
+  <img src="brand/freshy_matcha_original_03_delivery_crate_balanced.png" alt="Freshy Matcha balanced delivery crate concept" width="48%" />
   <img src="brand/freshy_matcha_original_04_window_display.png" alt="Freshy Matcha window display concept" width="48%" />
+</p>
+
+<p align="center">
   <img src="brand/freshy_matcha_original_05_corporate_gifting_table.png" alt="Freshy Matcha corporate gifting table concept" width="48%" />
 </p>
 
+</details>
+
 <div align="center">
-  <sub>Every visual direction above is included in the repository's <code>brand/</code> asset library.</sub>
+  <sub>Curated for first impression. Complete for review. Every visual direction remains in the repository's <code>brand/</code> asset library.</sub>
 </div>
