@@ -180,109 +180,102 @@ See [`SECURITY.md`](SECURITY.md) for the repository’s security and public-shar
 </div>
 
 
-## Visual direction
+## Complete visual direction
 
-The README now treats the brand library like a presentation: a few strong visual statements lead the story, while the complete production archive remains available below without overwhelming the page.
+The full image library is visible below and organized as a brand presentation rather than a thumbnail wall. Portrait boards are shown in large two-up spreads. Landscape scenes receive full-width treatment so their spatial and material details remain readable.
 
-### Selected identity spreads
+### 01 · Identity foundations
 
 <p align="center">
-  <img src="brand/brand1_improved.png" alt="Freshy Matcha expanded light identity and packaging board" width="88%" />
+  <img src="brand/brand1_improved.png" alt="Freshy Matcha expanded light identity and packaging board" width="82%" />
 </p>
 
-<p align="center"><strong>Identity system · packaging, stationery, and touchpoints</strong></p>
+<p align="center"><strong>Packaging, stationery, and the core identity system</strong></p>
 
 <p align="center">
-  <img src="brand/freshymatcha_brandstory_clean_product_led.png" alt="Freshy Matcha clean product-led brand story board" width="48%" />
-  <img src="brand/freshy.png" alt="Freshy Matcha tall visual identity presentation board" width="48%" />
-</p>
-
-<p align="center">
-  <img src="brand/05_environment.png" alt="Freshy Matcha branded environment and spatial applications" width="88%" />
-</p>
-
-<p align="center"><strong>Brand world · a calm identity carried into space</strong></p>
-
-<p align="center">
-  <img src="brand/freshy_matcha_idea_02_empty_tea_bar.png" alt="Freshy Matcha empty tea bar interior concept" width="88%" />
-</p>
-
-<p align="center"><strong>Spatial direction · retail as a mindful ritual</strong></p>
-
-<p align="center">
-  <img src="brand/freshy_matcha_hero_exterior_refined.png" alt="Freshy Matcha refined exterior hero scene" width="48%" />
-  <img src="brand/freshy_matcha_original_brand_world.png" alt="Freshy Matcha original brand world presentation" width="48%" />
-</p>
-
-<details>
-<summary><strong>Browse the complete production asset archive</strong> · 29 additional visual assets</summary>
-
-### Identity foundations
-
-<p align="center">
-  <img src="brand/logos.png" alt="Freshy Matcha logo exploration and lockup board" width="48%" />
-  <img src="brand/freshy_matcha_typography_only.png" alt="Freshy Matcha typography and editorial layout reference" width="48%" />
-</p>
-
-### Physical applications
-
-<p align="center">
-  <img src="brand/01_stationery_suite.png" alt="Freshy Matcha stationery suite applications" width="48%" />
-  <img src="brand/02_desk_objects.png" alt="Freshy Matcha desk objects and workday touchpoints" width="48%" />
+  <img src="brand/freshymatcha_brandstory_clean_product_led.png" alt="Freshy Matcha clean product-led brand story board" width="46%" />
+  <img src="brand/freshy.png" alt="Freshy Matcha tall visual identity presentation board" width="46%" />
 </p>
 
 <p align="center">
-  <img src="brand/03_wearables.png" alt="Freshy Matcha wearable brand applications" width="48%" />
-  <img src="brand/04_accessories.png" alt="Freshy Matcha accessories and branded objects" width="48%" />
+  <img src="brand/logos.png" alt="Freshy Matcha logo exploration and lockup board" width="46%" />
+  <img src="brand/freshy_matcha_typography_only.png" alt="Freshy Matcha typography and editorial layout reference" width="46%" />
 </p>
 
-### Retail and packaging concepts
+### 02 · Physical touchpoints
 
 <p align="center">
-  <img src="brand/freshy_matcha_idea_01_packaging_shelf.png" alt="Freshy Matcha packaging shelf concept" width="48%" />
-  <img src="brand/freshy_matcha_idea_03_gift_box.png" alt="Freshy Matcha gift box concept" width="48%" />
-</p>
-
-<p align="center">
-  <img src="brand/freshy_matcha_idea_04_wayfinding_system.png" alt="Freshy Matcha wayfinding system concept" width="48%" />
-  <img src="brand/freshy_matcha_idea_05_stationery_pattern.png" alt="Freshy Matcha stationery pattern concept" width="48%" />
-</p>
-
-### Standalone applications
-
-<p align="center">
-  <img src="brand/freshy_matcha_standalone_01_interior.png" alt="Freshy Matcha standalone interior concept" width="48%" />
-  <img src="brand/freshy_matcha_standalone_02_counter_objects.png" alt="Freshy Matcha counter objects and service touchpoints" width="48%" />
+  <img src="brand/01_stationery_suite.png" alt="Freshy Matcha stationery suite applications" width="46%" />
+  <img src="brand/02_desk_objects.png" alt="Freshy Matcha desk objects and workday touchpoints" width="46%" />
 </p>
 
 <p align="center">
-  <img src="brand/freshy_matcha_standalone_03_wall_signage.png" alt="Freshy Matcha wall signage concept" width="48%" />
-  <img src="brand/freshy_matcha_standalone_04_packaging_display.png" alt="Freshy Matcha packaging display concept" width="48%" />
+  <img src="brand/03_wearables.png" alt="Freshy Matcha wearable brand applications" width="46%" />
+  <img src="brand/04_accessories.png" alt="Freshy Matcha accessories and branded objects" width="46%" />
+</p>
+
+### 03 · Environments and retail
+
+<p align="center">
+  <img src="brand/05_environment.png" alt="Freshy Matcha branded environment and spatial applications" width="82%" />
 </p>
 
 <p align="center">
-  <img src="brand/freshy_matcha_standalone_04_packaging_display(1).png" alt="Freshy Matcha alternate packaging display concept" width="48%" />
-  <img src="brand/freshy_matcha_standalone_05_bathroom_detail.png" alt="Freshy Matcha branded bathroom detail concept" width="48%" />
-</p>
-
-### Brand-world applications
-
-<p align="center">
-  <img src="brand/freshy_matcha_original_01_ritual_station.png" alt="Freshy Matcha ritual station concept" width="48%" />
-  <img src="brand/freshy_matcha_original_02_transit_kiosk.png" alt="Freshy Matcha transit kiosk concept" width="48%" />
+  <img src="brand/freshy_matcha_hero_exterior_refined.png" alt="Freshy Matcha refined exterior hero scene" width="46%" />
+  <img src="brand/freshy_matcha_original_brand_world.png" alt="Freshy Matcha original brand world presentation" width="46%" />
 </p>
 
 <p align="center">
-  <img src="brand/freshy_matcha_original_03_delivery_crate_balanced.png" alt="Freshy Matcha balanced delivery crate concept" width="48%" />
-  <img src="brand/freshy_matcha_original_04_window_display.png" alt="Freshy Matcha window display concept" width="48%" />
+  <img src="brand/freshy_matcha_idea_02_empty_tea_bar.png" alt="Freshy Matcha empty tea bar interior concept" width="82%" />
+</p>
+
+<p align="center"><strong>Retail direction · a calm, tactile space for the matcha ritual</strong></p>
+
+### 04 · Packaging and service concepts
+
+<p align="center">
+  <img src="brand/freshy_matcha_idea_01_packaging_shelf.png" alt="Freshy Matcha packaging shelf concept" width="46%" />
+  <img src="brand/freshy_matcha_idea_03_gift_box.png" alt="Freshy Matcha gift box concept" width="46%" />
 </p>
 
 <p align="center">
-  <img src="brand/freshy_matcha_original_05_corporate_gifting_table.png" alt="Freshy Matcha corporate gifting table concept" width="48%" />
+  <img src="brand/freshy_matcha_idea_04_wayfinding_system.png" alt="Freshy Matcha wayfinding system concept" width="46%" />
+  <img src="brand/freshy_matcha_idea_05_stationery_pattern.png" alt="Freshy Matcha stationery pattern concept" width="46%" />
 </p>
 
-</details>
+<p align="center">
+  <img src="brand/freshy_matcha_standalone_01_interior.png" alt="Freshy Matcha standalone interior concept" width="46%" />
+  <img src="brand/freshy_matcha_standalone_02_counter_objects.png" alt="Freshy Matcha counter objects and service touchpoints" width="46%" />
+</p>
+
+### 05 · Standalone brand applications
+
+<p align="center">
+  <img src="brand/freshy_matcha_standalone_03_wall_signage.png" alt="Freshy Matcha wall signage concept" width="46%" />
+  <img src="brand/freshy_matcha_standalone_04_packaging_display.png" alt="Freshy Matcha packaging display concept" width="46%" />
+</p>
+
+<p align="center">
+  <img src="brand/freshy_matcha_standalone_04_packaging_display(1).png" alt="Freshy Matcha alternate packaging display concept" width="46%" />
+  <img src="brand/freshy_matcha_standalone_05_bathroom_detail.png" alt="Freshy Matcha branded bathroom detail concept" width="46%" />
+</p>
+
+### 06 · Brand-world extensions
+
+<p align="center">
+  <img src="brand/freshy_matcha_original_01_ritual_station.png" alt="Freshy Matcha ritual station concept" width="46%" />
+  <img src="brand/freshy_matcha_original_02_transit_kiosk.png" alt="Freshy Matcha transit kiosk concept" width="46%" />
+</p>
+
+<p align="center">
+  <img src="brand/freshy_matcha_original_03_delivery_crate_balanced.png" alt="Freshy Matcha balanced delivery crate concept" width="46%" />
+  <img src="brand/freshy_matcha_original_04_window_display.png" alt="Freshy Matcha window display concept" width="46%" />
+</p>
+
+<p align="center">
+  <img src="brand/freshy_matcha_original_05_corporate_gifting_table.png" alt="Freshy Matcha corporate gifting table concept" width="82%" />
+</p>
 
 <div align="center">
-  <sub>Curated for first impression. Complete for review. Every visual direction remains in the repository's <code>brand/</code> asset library.</sub>
+  <sub>Every image in the <code>brand/</code> directory is now presented visibly, in sequence, and at a readable scale.</sub>
 </div>
